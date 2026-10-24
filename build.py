@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the two Gyaan Ganga landing pages from template.html.
+"""Builds the two Spiritual Sojourn landing pages from template.html.
 
   pay/index.html       every Register button opens the payment link
   register/index.html  Register opens a WhatsApp-number step, then the registration link
@@ -17,7 +17,7 @@ for mode, keep, drop, folder in (("pay", "pay", "lead", "pay"), ("lead", "lead",
     html = tpl.replace("{{MODE}}", mode)
     html = re.sub(rf"\n?[ \t]*<!--{drop}-->.*?<!--/{drop}-->", "", html, flags=re.S)
     html = re.sub(rf"<!--/?{keep}-->", "", html)
-    html = html.replace('content="../img/og.jpg"', f'content="{SITE}/img/og.jpg"')
+    html = html.replace('content="../img/og.jpg"', f'content="{SITE}/img/og.jpg?v=2"')
     html = re.sub(r"<title>", f'<link rel="canonical" href="{SITE}/{folder}/">\n<title>', html, count=1)
     out = here / folder / "index.html"
     out.parent.mkdir(exist_ok=True)

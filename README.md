@@ -1,4 +1,4 @@
-# Gyaan Ganga 2026 landing pages
+# Spiritual Sojourn 2026 landing pages
 
 Two pages for the Spiritual Sojourn with Gurudev at Guru Sanidhya (6–12 Nov 2026, Gujarat Ashram, Vasad).
 

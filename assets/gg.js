@@ -1,4 +1,4 @@
-/* Gyaan Ganga 2026 · page behaviour
+/* Spiritual Sojourn 2026 · page behaviour
    ------------------------------------------------------------------
    EDIT THIS BLOCK. Everything else can stay as it is.
    ------------------------------------------------------------------ */
@@ -49,7 +49,7 @@ var GG = {
     var a = ctas[i];
     if (MODE === "pay") {
       a.href = GG.PAYMENT_URL;
-      a.addEventListener("click", function () { track("InitiateCheckout", { content_name: "Gyaan Ganga 2026" }); });
+      a.addEventListener("click", function () { track("InitiateCheckout", { content_name: "Spiritual Sojourn 2026" }); });
     } else {
       a.href = GG.REGISTER_URL; // fallback if the step below fails
       a.addEventListener("click", function (e) { e.preventDefault(); openSheet(); });
@@ -145,7 +145,7 @@ var GG = {
     modal.classList.add("on"); modal.setAttribute("aria-hidden", "false");
     d.body.style.overflow = "hidden";
     setTimeout(function () { try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); } }, 250);
-    track("ViewContent", { content_name: "Gyaan Ganga WhatsApp step" });
+    track("ViewContent", { content_name: "Spiritual Sojourn WhatsApp step" });
   }
   function closeSheet() {
     modal.classList.remove("on"); modal.setAttribute("aria-hidden", "true");
@@ -190,7 +190,7 @@ var GG = {
       try { sent = navigator.sendBeacon && navigator.sendBeacon(GG.LEAD_ENDPOINT, data); } catch (e3) {}
       if (!sent) { try { fetch(GG.LEAD_ENDPOINT, { method: "POST", mode: "no-cors", body: data, keepalive: true }); } catch (e4) {} }
     }
-    track("Lead", { content_name: "Gyaan Ganga 2026" });
+    track("Lead", { content_name: "Spiritual Sojourn 2026" });
     sheet.classList.add("sent");
     setTimeout(function () { location.href = GG.REGISTER_URL; }, 1400);
   });
