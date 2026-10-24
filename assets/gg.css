@@ -97,6 +97,9 @@ section.s{padding:52px 0}
 .count small{display:block;margin-top:4px;font:600 10px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--ivory)}
 
 /* why attend */
+.head .why-title{font-size:clamp(36px,10.5vw,56px);line-height:1.05;color:var(--deep);letter-spacing:-.01em}
+.why-title em{display:block;font-style:normal;font-weight:800;color:var(--verm)}
+.head .why-line{margin-top:12px;font:italic 600 clamp(19px,5.2vw,24px)/1.35 var(--disp);color:var(--deep)}
 .theme{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
 .theme span{background:var(--ivory-1);border:1px solid var(--ivory-3);color:var(--deep);border-radius:99px;padding:4px 14px;font:italic 600 15px/1.4 var(--disp)}
 .points{list-style:none;margin:0;padding:0;display:grid;gap:10px}
