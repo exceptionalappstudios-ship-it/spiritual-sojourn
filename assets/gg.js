@@ -66,7 +66,7 @@ var GG = {
     var now = Date.now(), diff = start - now, k, j;
     if (diff <= 0) {
       var live = now < end;
-      for (k = 0; k < labels.length; k++) labels[k].textContent = live ? "Guru Sanidhya is happening now" : "Guru Sanidhya 2026 has concluded";
+      for (k = 0; k < labels.length; k++) labels[k].textContent = live ? "The Spiritual Sojourn is happening now" : "The Spiritual Sojourn 2026 has concluded";
       for (k = 0; k < counts.length; k++) counts[k].style.display = "none";
       if (stickyTime) stickyTime.textContent = live ? "Happening now · last seats" : "Thank you for joining";
       return false;
