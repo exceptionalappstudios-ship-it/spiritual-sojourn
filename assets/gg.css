@@ -45,8 +45,14 @@ p{margin:0}
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:8px 0 28px;overflow:hidden}
-.hero .grid{display:grid;gap:22px;align-items:center}
-.hero-copy{text-align:center}
+.hero .grid{display:grid;gap:14px;align-items:center;grid-template-areas:"brand" "art" "copy" "when"}
+.h-brand{grid-area:brand;text-align:center}
+.h-art{grid-area:art}
+.hero-copy{grid-area:copy;text-align:center}
+.h-when{grid-area:when}
+.strip .wide{display:none}
+@media (min-width:600px){.strip .wide{display:inline}}
+
 .wordmark{width:min(230px,62vw);aspect-ratio:840/418;margin:6px auto 0;background:var(--ivory);
   -webkit-mask:url(../img/wordmark-v2.webp) center/contain no-repeat;mask:url(../img/wordmark-v2.webp) center/contain no-repeat;
   animation:wm 1.4s cubic-bezier(.65,0,.35,1) both}
@@ -352,10 +358,12 @@ footer p{opacity:.7}
 }
 @media (min-width:980px){
   .hero{padding:18px 0 46px}
-  .hero .grid{grid-template-columns:1.05fr .95fr;gap:48px}
+  .hero .grid{grid-template-columns:1.05fr .95fr;grid-template-areas:"brand art" "copy art" "copy when";column-gap:48px;row-gap:0;align-items:start}
+  .h-art{align-self:end}
+  .h-brand{text-align:left;align-self:end}
   .hero-copy{text-align:left}
-  .hero-copy .wordmark{margin-left:0}
-  .hero-copy .lotusline{justify-content:flex-start}
+  .h-brand .wordmark{margin-left:0}
+  .h-brand .lotusline{justify-content:flex-start}
   .hero h1{margin-left:0}
   .lede{margin-left:0}
   .hero-copy .cta-box{margin-left:0}
@@ -364,6 +372,25 @@ footer p{opacity:.7}
   .details{grid-template-columns:1.1fr .9fr}
   .sticky{display:none}
   footer{padding-bottom:36px}
+}
+
+/* phones: keep Gurudev, headline and button on the first screen */
+@media (max-width:979px){
+  .top{padding:6px 0 0}
+  .badge45{width:46px;height:46px}
+  .ashram{height:46px}.ashram img{height:36px}
+  .wordmark{width:min(160px,44vw);margin-top:0}
+  .lotusline{margin:2px 0 6px}
+  .lotusline i{width:44px}
+  .arch-wrap{width:min(86%,360px)}
+  .ribbon{margin-top:-22px;padding:8px 40px;font-size:17px}
+  .hero h1{margin:8px auto 6px;font-size:clamp(26px,7.4vw,34px)}
+  .hero .chip{display:none}
+  .hero-copy{display:flex;flex-direction:column}
+  .hero-copy .lede{order:3;margin-top:14px;font-size:16.5px}
+  .hero-copy .cta-box{order:2;width:100%}
+  .hero .cta-box{margin-top:14px}
+  .h-when .when{margin-top:8px}
 }
 
 /* ---------- reduced motion ---------- */
