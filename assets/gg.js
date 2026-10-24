@@ -14,9 +14,9 @@ var GG = {
   // Leave "" to skip saving. See README.md for the 2-minute setup.
   LEAD_ENDPOINT: "",
 
-  // Countdown target (India time) and the last day of the event.
-  EVENT_START: "2026-11-06T06:00:00+05:30",
-  EVENT_END: "2026-11-12T23:59:00+05:30",
+  // Countdown target (India time) and when the event is over.
+  EVENT_START: "2026-11-07T17:00:00+05:30",
+  EVENT_END: "2026-11-07T22:00:00+05:30",
 
   // Optional seats meter. Only shown when BOTH numbers are set, so it never shows a made-up figure.
   // Example: SEATS_TOTAL: 3000, SEATS_LEFT: 410
@@ -130,6 +130,30 @@ var GG = {
     var all = d.querySelectorAll(".rv"); for (var z = 0; z < all.length; z++) all[z].classList.add("in");
   }
   if (reduce) { var allr = d.querySelectorAll(".rv"); for (var y = 0; y < allr.length; y++) allr[y].classList.add("in"); }
+
+  /* ---- Testimonial reel: plays muted while on screen, tap for sound ---- */
+  var reel = d.getElementById("reel"), vid = d.getElementById("reel-video");
+  if (reel && vid) {
+    var btn = reel.querySelector(".sound"), seen = false, want = !reduce;
+    var play = function () { var p = vid.play(); if (p && p.catch) p.catch(function () {}); };
+    if ("IntersectionObserver" in w) {
+      new IntersectionObserver(function (es) {
+        seen = es[0].isIntersecting;
+        if (seen && want) play(); else if (!seen) vid.pause();
+      }, { threshold: 0.35 }).observe(reel);
+    } else if (want) play();
+    d.addEventListener("visibilitychange", function () { if (d.hidden) vid.pause(); else if (seen && want) play(); });
+    var toggle = function () {
+      if (vid.muted) {
+        vid.muted = false; vid.currentTime = 0; want = true; play();
+        btn.setAttribute("aria-pressed", "true"); btn.setAttribute("aria-label", "Turn sound off"); reel.classList.add("unmuted");
+        track("ViewContent", { content_name: "Spiritual Sojourn reel with sound" });
+      } else {
+        vid.muted = true; btn.setAttribute("aria-pressed", "false"); btn.setAttribute("aria-label", "Turn sound on");
+      }
+    };
+    reel.addEventListener("click", toggle);
+  }
 
   /* ---- Page 2: WhatsApp step ---- */
   var modal = d.getElementById("wa-step");

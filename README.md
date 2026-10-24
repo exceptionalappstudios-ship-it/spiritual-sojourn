@@ -1,6 +1,6 @@
 # Spiritual Sojourn 2026 landing pages
 
-Two pages for the Spiritual Sojourn with Gurudev at Guru Sanidhya (6–12 Nov 2026, Gujarat Ashram, Vasad).
+Two pages for the Spiritual Sojourn with Gurudev: first time at the Gujarat Ashram, Vasad, Saturday 7 Nov 2026, 5:00 PM onwards.
 
 | Page | URL | What the Register button does |
 |---|---|---|
@@ -25,6 +25,10 @@ Edit the block at the top of `assets/gg.js`:
 - `EVENT_START` / `EVENT_END`: drive the countdown
 - `SEATS_TOTAL` / `SEATS_LEFT`: set both to real numbers to show the "seats taken" bar. It stays hidden while either is `null`.
 - `PIXEL_ID`: optional Meta Pixel for ads (PageView, InitiateCheckout, Lead)
+
+## Testimonial video
+
+The hero plays `video/sojourn-reel.mp4` (compressed to 576×1024, about 4.7 MB) with `video/sojourn-reel-poster.webp` as the still frame. It plays muted while on screen, pauses when scrolled away, and visitors tap it for sound. To swap the video, replace both files with the same names.
 
 ## Change the copy
 

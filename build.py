@@ -17,7 +17,7 @@ for mode, keep, drop, folder in (("pay", "pay", "lead", "pay"), ("lead", "lead",
     html = tpl.replace("{{MODE}}", mode)
     html = re.sub(rf"\n?[ \t]*<!--{drop}-->.*?<!--/{drop}-->", "", html, flags=re.S)
     html = re.sub(rf"<!--/?{keep}-->", "", html)
-    html = html.replace('content="../img/og.jpg"', f'content="{SITE}/img/og.jpg?v=3"')
+    html = html.replace('content="../img/og.jpg"', f'content="{SITE}/img/og.jpg?v=4"')
     html = re.sub(r"<title>", f'<link rel="canonical" href="{SITE}/{folder}/">\n<title>', html, count=1)
     out = here / folder / "index.html"
     out.parent.mkdir(exist_ok=True)
