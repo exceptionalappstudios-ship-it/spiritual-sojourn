@@ -7,6 +7,19 @@ Two pages for the Spiritual Sojourn with Gurudev: first time at the Gujarat Ashr
 | Payment | `/pay/` | Opens `PAYMENT_URL` directly |
 | WhatsApp first | `/register/` | Asks for a WhatsApp number, then opens `REGISTER_URL` |
 
+## Live address
+
+The live pages are on the Guru Sanidhya site (Render):
+
+- https://www.gujaratashram.org/spiritualsojourn (payment page)
+- https://www.gujaratashram.org/spiritualsojourn/register (WhatsApp page)
+
+To update them after editing, build the Render copy into the `guru-sanidhya-public` repo and push that repo:
+
+```
+python3 build.py --render ../guru-sanidhya-public/public/spiritualsojourn
+```
+
 ## Going live (GitHub Pages)
 
 In this repo on GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**, pick `main` and `/ (root)`, then Save. After a minute the pages are at:
